@@ -1,0 +1,14 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "mutators": {
+        "@default": true
+    },
+    "phpUnit": {
+        "customPath": "./vendor/bin/phpunit"
+    },
+    "minMsi": 100
+}
