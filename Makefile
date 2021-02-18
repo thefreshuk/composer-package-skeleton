@@ -54,7 +54,7 @@ check-types: composer.lock
 
 .PHONY: check-test
 check-test: composer.lock
-	php vendor/bin/phpunit
+	php vendor/bin/paratest
 
 .PHONY: check-mutations
 check-mutations: composer.lock
