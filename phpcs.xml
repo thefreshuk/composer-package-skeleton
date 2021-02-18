@@ -1,9 +1,78 @@
 <?xml version="1.0"?>
-<ruleset name=":package_name">
+<ruleset name="Skeleton">
     <description>Skeleton Coding Standard</description>
 
-    <!-- Use the PSR2 Standard-->
+    <!-- Use the PSR2 Standard -->
     <rule ref="PSR2" />
+
+    <!-- Extras -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes" />
+
+    <!-- Class Structure Rules -->
+    <rule ref="SlevomatCodingStandard.Classes.ClassStructure">
+        <properties>
+            <property name="groups" type="array">
+                <element value="uses"/>
+
+                <!-- Public constants are first but you don't care about the order of protected or private constants -->
+                <element value="public constants"/>
+                <element value="constants"/>
+
+                <element value="static properties" />
+
+                <!-- You don't care about the order among the properties. The same can be done with "properties" shortcut -->
+                <element value="public properties, protected properties, private properties"/>
+
+                <!-- Constructor is first, then all public methods, then protected/private methods and magic methods are last -->
+                <element value="constructor"/>
+                <element value="all public methods"/>
+                <element value="methods"/>
+                <element value="magic methods"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Control Structure Rules -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator" />
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit" />
+
+    <!-- Operator Rules -->
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators" />
+    <rule
+        ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators"
+    />
+
+    <!-- Dead Code Rules -->
+    <rule
+        ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"
+    />
+    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" />
+    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable" />
+    <rule ref="SlevomatCodingStandard.Variables.UselessVariable" />
+    <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
+
+    <!-- Prohibit Unnecessary Side-effects -->
+    <rule ref="SlevomatCodingStandard.PHP.DisallowReference" />
+    <rule ref="SlevomatCodingStandard.Variables.DisallowSuperGlobalVariable" />
+
+    <!-- Enforce assertions -->
+    <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion" />
+
+    <!-- Prohibit Superfluous Code -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming" />
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
+    <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations" />
+    <rule
+        ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn"
+    />
+    <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator" />
+
+    <!-- Sort namespaces -->
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
 
     <file>src/</file>
     <file>tests/</file>
