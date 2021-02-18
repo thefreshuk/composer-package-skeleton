@@ -14,7 +14,7 @@ all:
 init: composer.lock init-hooks
 
 .PHONY: check
-check: check-lint check-types check-test check-mutations
+check: check-lint check-types check-test check-mutations check-dependencies
 
 .PHONY: clean
 clean: clean-hooks clean-dependencies clean-test
@@ -54,8 +54,12 @@ check-test: composer.lock
 	php vendor/bin/phpunit
 
 .PHONY: check-mutations
-check-mutations:
+check-mutations: composer.lock
 	php vendor/bin/infection --show-mutations
+
+.PHONY: check-dependencies
+check-dependencies: composer.lock
+	composer show --direct --outdated --strict
 
 #
 # Fixing
