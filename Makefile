@@ -20,7 +20,7 @@ check: check-lint check-types check-test check-mutations
 clean: clean-hooks clean-dependencies clean-test
 
 #
-# Init
+# Initializing
 #
 
 composer.lock: composer.json
@@ -56,6 +56,14 @@ check-test: composer.lock
 .PHONY: check-mutations
 check-mutations:
 	php vendor/bin/infection --show-mutations
+
+#
+# Fixing
+#
+
+.PHONY: fix-lint
+fix-lint: composer.lock
+	-php vendor/bin/phpcbf
 
 #
 # Cleaning
