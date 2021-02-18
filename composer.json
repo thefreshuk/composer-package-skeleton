@@ -2,6 +2,7 @@
     "name": "thefreshuk/skeleton",
     "description": "Skeleton composer project for Leadflo PHP packages.",
     "type": "library",
+    "readme": "./README.md",
     "require-dev": {
         "phpunit/phpunit": "^9.5",
         "brianium/paratest": "^6.2",
