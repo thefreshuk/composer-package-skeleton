@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset name=":package_name">
+    <description>Skeleton Coding Standard</description>
+
+    <!-- Use the PSR2 Standard-->
+    <rule ref="PSR2" />
+
+    <file>src/</file>
+    <file>tests/</file>
+    <file>examples/</file>
+</ruleset>
