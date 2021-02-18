@@ -4,6 +4,7 @@
 
 SHELL = /bin/sh
 
+PARALLELISM = 8
 GIT_HOOKS_SRC  = scripts/git-hook-guard.sh
 GIT_HOOKS_DEST = .git/hooks/pre-commit .git/hooks/pre-push
 
@@ -46,19 +47,19 @@ $(GIT_HOOKS_DEST): $(GIT_HOOKS_SRC)
 
 .PHONY: check-lint
 check-lint: composer.lock
-	php vendor/bin/phpcs
+	php vendor/bin/phpcs --parallel=$(PARALLELISM)
 
 .PHONY: check-types
 check-types: composer.lock
-	php vendor/bin/psalm --no-diff --threads=8
+	php vendor/bin/psalm --no-diff --threads=$(PARALLELISM)
 
 .PHONY: check-test
 check-test: composer.lock
-	php vendor/bin/paratest
+	php vendor/bin/paratest --processes=$(PARALLELISM)
 
 .PHONY: check-mutations
 check-mutations: composer.lock
-	php vendor/bin/infection --show-mutations
+	php vendor/bin/infection --show-mutations --threads=$(PARALLELISM)
 
 .PHONY: check-dependencies
 check-dependencies: composer.lock
