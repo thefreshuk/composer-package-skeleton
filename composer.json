@@ -6,8 +6,7 @@
         "phpunit/phpunit": "^9.5",
         "brianium/paratest": "^6.2",
         "vimeo/psalm": "^4.6",
-        "squizlabs/php_codesniffer": "^3.5",
-        "phpat/phpat": "^0.7.5"
+        "squizlabs/php_codesniffer": "^3.5"
     },
     "license": "MIT",
     "authors": [
