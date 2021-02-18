@@ -16,6 +16,9 @@ init: composer.lock init-hooks
 .PHONY: check
 check: check-lint check-types check-test check-mutations check-dependencies
 
+.PHONY: fix
+fix: fix-lint fix-types
+
 .PHONY: clean
 clean: clean-hooks clean-dependencies clean-test
 
@@ -47,7 +50,7 @@ check-lint: composer.lock
 
 .PHONY: check-types
 check-types: composer.lock
-	php vendor/bin/psalm
+	php vendor/bin/psalm --no-diff --threads=8
 
 .PHONY: check-test
 check-test: composer.lock
@@ -68,6 +71,10 @@ check-dependencies: composer.lock
 .PHONY: fix-lint
 fix-lint: composer.lock
 	-php vendor/bin/phpcbf
+
+.PHONY: fix-types
+fix-types: composer.lock
+	php vendor/bin/psalter --issues=all
 
 #
 # Cleaning
