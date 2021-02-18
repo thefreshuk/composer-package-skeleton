@@ -55,7 +55,7 @@ check-test: composer.lock
 
 .PHONY: check-mutations
 check-mutations:
-	php vendor/bin/infection --sho
+	php vendor/bin/infection --show-mutations
 
 #
 # Cleaning
