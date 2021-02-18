@@ -8,4 +8,8 @@
     <file>src/</file>
     <file>tests/</file>
     <file>examples/</file>
+
+    <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
+        <exclude-pattern>tests</exclude-pattern>
+    </rule>
 </ruleset>
