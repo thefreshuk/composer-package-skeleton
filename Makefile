@@ -65,6 +65,10 @@ check-mutations: composer.lock
 check-dependencies: composer.lock
 	composer show --direct --outdated --strict
 
+.PHONY: check-performance
+check-performance: composer.lock
+	php vendor/bin/phpbench run
+
 #
 # Fixing
 #

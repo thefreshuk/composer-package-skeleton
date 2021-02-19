@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace Skeleton\Tests;
+namespace Skeleton\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use Skeleton\Skeleton;

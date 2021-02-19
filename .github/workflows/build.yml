@@ -27,6 +27,7 @@ jobs:
           php-version: ${{ matrix.php }}
           tools: composer:v2
           coverage: pcov
+          extensions: opcache
 
       - name: Check
         run: make check
