@@ -14,3 +14,10 @@
 /docs                        export-ignore
 /examples                    export-ignore
 /scripts                     export-ignore
+/build                       export-ignore
+/phpbench.json               export-ignore
+/requirements.txt            export-ignore
+/infection.json.dist         export-ignore
+/Makefile                    export-ignore
+
+*.php diff=php
