@@ -14,16 +14,7 @@
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
     },
     "license": "MIT",
-    "authors": [
-        {
-            "name": "James Dunne",
-            "email": "james@thefreshuk.com"
-        },
-        {
-            "name": "Gabriel Carpreau",
-            "email": "gabriel@thefreshuk.com"
-        }
-    ],
+    "authors": [],
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.4"
@@ -37,5 +28,9 @@
         "psr-4": {
             "Skeleton\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     }
 }
