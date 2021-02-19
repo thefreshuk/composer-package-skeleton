@@ -13,7 +13,6 @@ class ExampleTest extends TestCase
             [9, "yes"],
             [10, "no"],
             [11, "no"],
-            [12, "no"]
         ];
     }
 
