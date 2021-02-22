@@ -99,7 +99,7 @@ check-mutations: init-composer
 
 .PHONY: check-dependencies
 check-dependencies: init-composer
-	composer show --direct --outdated --strict
+	composer show --direct --outdated --strict --minor-only
 
 .PHONY: check-performance
 check-performance: init-composer
